@@ -14,7 +14,7 @@ function render(st) {
   `;
   router.updatePageLinks();
 
-  addEventListeners(state);
+  addEventListeners(st);
 }
 
 // render(state.Home);
