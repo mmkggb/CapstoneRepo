@@ -2,6 +2,7 @@ import { Header, Nav, Main, Footer } from "./components";
 import * as state from "./store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
+import axios from "axios";
 
 const router = new Navigo("/");
 
@@ -35,6 +36,25 @@ function addEventListeners(st) {
       document.querySelector("nav > ul").classList.toggle("hidden--mobile")
     );
 }
+
+var axios = require("axios").default;
+var options = {
+  method: 'GET',
+  url: 'https://odds.p.rapidapi.com/v4/sports',
+  params: {all: 'true'},
+  headers: {
+    'x-rapidapi-host': 'odds.p.rapidapi.com',
+    'x-rapidapi-key': '61a3417efamsh1329a53d3b839b1p1471f7jsnf9a2cecae88b'
+  }
+};
+
+axios.request(options).then(function (response) {
+	console.log(response.data);
+}).catch(function (error) {
+	console.error(error);
+});
+
+
 router
   .on({
     "/": () => render(state.Home),
