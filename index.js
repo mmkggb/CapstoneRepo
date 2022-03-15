@@ -37,23 +37,25 @@ function addEventListeners(st) {
     );
 }
 
-var axios = require("axios").default;
+// var axios = require("axios").default;
 var options = {
-  method: 'GET',
-  url: 'https://odds.p.rapidapi.com/v4/sports',
-  params: {all: 'true'},
+  method: "GET",
+  url: "https://odds.p.rapidapi.com/v4/sports",
+  params: { all: "true" },
   headers: {
-    'x-rapidapi-host': 'odds.p.rapidapi.com',
-    'x-rapidapi-key': '61a3417efamsh1329a53d3b839b1p1471f7jsnf9a2cecae88b'
+    "x-rapidapi-host": "odds.p.rapidapi.com",
+    "x-rapidapi-key": `${process.env.SPORTS_API_KEY}`
   }
 };
 
-axios.request(options).then(function (response) {
-	console.log(response.data);
-}).catch(function (error) {
-	console.error(error);
-});
-
+axios
+  .request(options)
+  .then(function(response) {
+    console.log(response.data);
+  })
+  .catch(function(error) {
+    console.error(error);
+  });
 
 router
   .on({

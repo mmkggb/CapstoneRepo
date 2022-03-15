@@ -53,3 +53,6 @@ axios.request(options).then(function (response) {
 }).catch(function (error) {
 	console.error(error);
 });
+.get(
+  `https://api.openweathermap.org/data/2.5/weather?q=st.%20louis&appid=${process.env.OPEN_WEATHER_MAP_API_KEY}`
+)

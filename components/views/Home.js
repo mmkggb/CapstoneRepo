@@ -10,5 +10,13 @@ export default () => html`<main>
 </p></div>
 <p id="startBttn" alt='convert to button'>Get Started</p>
 <img src="${Map}" alt="Map Location" id="locationPreview"/>
+</main>
 
-</main>`;
+
+`;
+{
+  /* <h3>NBA Listings ${st.weather.city}  +NFL Listings
+${kelvinToFahrenheit(st.weather.temp)} +MLB listings
+${kelvinToFahrenheit(st.weather.feelsLike)}
+</h3>  */
+}
