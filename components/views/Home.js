@@ -1,6 +1,6 @@
 import html from "html-literal";
 import Map from "../../assets/img/Map.png";
-export default () => html`<main>
+export default st => html`<section id="home"><main>
 <p>Welcome To Game Day Nation where sports fans all alike come here to check sporting events  listed in their local radius sports bar grill restaurants
 </p>
 
@@ -10,9 +10,9 @@ export default () => html`<main>
 </p></div>
 <p id="startBttn" alt='convert to button'>Get Started</p>
 <img src="${Map}" alt="Map Location" id="locationPreview"/>
+<h4> API Data Here "${st.data}" </h4>
 </main>
-
-
+</section>
 `;
 {
   /* <h3>NBA Listings ${st.weather.city}  +NFL Listings

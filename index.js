@@ -37,25 +37,54 @@ function addEventListeners(st) {
     );
 }
 
-// var axios = require("axios").default;
-var options = {
-  method: "GET",
-  url: "https://odds.p.rapidapi.com/v4/sports",
-  params: { all: "true" },
-  headers: {
-    "x-rapidapi-host": "odds.p.rapidapi.com",
-    "x-rapidapi-key": `${process.env.SPORTS_API_KEY}`
-  }
-};
+// axios
+//   .request(options)
+//   .then(function(response) {
+//     state.Home.Sports = {};
+//     state.Home.Sports.League = response.data.title;
+//     state.Home.Sports.Type = response.data.group;
+//     state.Home.Sports.description = response.data[0];
+//     console.log(response.data);
+//     done();
+//   })
+//   .catch(function(error) {
+//     console.error(error);
+//   });
 
-axios
-  .request(options)
-  .then(function(response) {
-    console.log(response.data);
-  })
-  .catch(function(error) {
-    console.error(error);
-  });
+router.hooks({
+  before: (done, params) => {
+    const page =
+      params && params.data && params.data.page
+        ? capitalize(params.data.page)
+        : "Home";
+
+    if (page === "Home") {
+      var options = {
+        method: "GET",
+        url: "https://odds.p.rapidapi.com/v4/sports",
+        params: { all: "true" },
+        headers: {
+          "x-rapidapi-host": "odds.p.rapidapi.com",
+          "x-rapidapi-key": `${process.env.SPORTS_API_KEY}`
+        }
+      };
+
+      axios
+        .request(options)
+        .then(function(response) {
+          state.Home.Sports = {};
+          state.Home.Sports.League = response.data.title;
+          state.Home.Sports.Type = response.data.group;
+          state.Home.Sports.description = response.data[0];
+          console.log(response.data);
+          done();
+        })
+        .catch(function(error) {
+          console.error(error);
+        });
+    }
+  }
+});
 
 router
   .on({

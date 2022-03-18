@@ -56,3 +56,32 @@ axios.request(options).then(function (response) {
 .get(
   `https://api.openweathermap.org/data/2.5/weather?q=st.%20louis&appid=${process.env.OPEN_WEATHER_MAP_API_KEY}`
 )
+router.hooks({
+  before: (done, params) => {
+    const page =
+      params && params.data && params.data.page
+        ? capitalize(params.data.page)
+        : "Home";
+
+    if (page === "Home") {
+      axios
+      .request(options)
+      .then(function(response) {
+        state.Home.Sports = {};
+        state.Home.Sports.League = response.data.title;
+        state.Home.Sports.Type = response.data.group;
+        state.Home.Sports.description = response.data[0];
+        console.log(response.data);
+        done();
+      })
+      .catch(function(error) {
+        console.error(error);
+      });
+    }
+  }
+})
+
+${Sports_API_URL}=
+.get(
+     `${Sports_API_URL}=${process.env.SPORTS_API_KEY}`
+)
