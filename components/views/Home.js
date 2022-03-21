@@ -10,7 +10,6 @@ export default st => html`<section id="home"><main>
 </p></div>
 <p id="startBttn" alt='convert to button'>Get Started</p>
 <img src="${Map}" alt="Map Location" id="locationPreview"/>
-<h4> API Data Here "${st.data}" </h4>
 </main>
 </section>
 `;

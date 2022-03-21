@@ -7,6 +7,7 @@ import axios from "axios";
 const router = new Navigo("/");
 
 function render(st) {
+  console.log("RENDER STATE", st);
   document.querySelector("#root").innerHTML = `
     ${Header(st)}
     ${Nav(state.Links)}
@@ -53,12 +54,12 @@ function addEventListeners(st) {
 
 router.hooks({
   before: (done, params) => {
-    const page =
-      params && params.data && params.data.page
-        ? capitalize(params.data.page)
+    const view =
+      params && params.data && params.data.view
+        ? capitalize(params.data.view)
         : "Home";
 
-    if (page === "Home") {
+    if (view === "Events") {
       var options = {
         method: "GET",
         url: "https://odds.p.rapidapi.com/v4/sports",
@@ -69,19 +70,26 @@ router.hooks({
         }
       };
 
-      axios
-        .request(options)
-        .then(function(response) {
-          state.Home.Sports = {};
-          state.Home.Sports.League = response.data.title;
-          state.Home.Sports.Type = response.data.group;
-          state.Home.Sports.description = response.data[0];
-          console.log(response.data);
-          done();
-        })
-        .catch(function(error) {
-          console.error(error);
+      axios.request(options).then(response => {
+        console.log("RESPONSE", response);
+        state.Sports.data = response.data;
+        state.Sports.data.map(sport => {
+          if (sport.key == "baseball_mlb") {
+            state.Sports.mlb = sport;
+          } else if (sport.key == "basketball_nba") {
+            state.Sports.nba = sport;
+          } else if (sport.key == "americanfootball_nfl_super_bowl_winner") {
+            state.Sports.nfl = sport;
+          }
         });
+        // state.Sports.League = response.data.title;
+        // state.Sports.Type = response.data.group;
+        // state.Sports.description = response.data[0];
+        console.log(response.data);
+        done();
+      });
+    } else {
+      done();
     }
   }
 });

@@ -1,5 +1,5 @@
 import html from "html-literal";
-
+import SportState from "../../store/Sports.js";
 export default () => html`
   <section id="events">
     <header><h2>Select Events</h2></header>
@@ -10,7 +10,7 @@ export default () => html`
         <th>MLB</th>
       </tr>
       <tr>
-        <td>NFL DATA</td>
+        <td>${SportState.nfl.description}</td>
         <td>NBA DATA</td>
         <td>MLB DATA</td>
       </tr>

@@ -71,3 +71,12 @@ table {
 h1{
   color: gray;
 }
+#navbar {
+  color: rgb(255, 255, 111)
+}
+.nav  li {
+  color: white;
+}
+#events h2 {
+color: #ac000a
+}
