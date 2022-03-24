@@ -1,6 +1,5 @@
 body {background-color: #ac000a;
   background-image: url("docs/Capstone Pictures/pexels-dom-le-roy-3991976.jpg");
-bacground-size: 150px;
    height: 85vh;
    width: 98vw;
   background-size: 100vw 84vh;
@@ -33,7 +32,7 @@ width: 65vw; */
 .main-mid {
 position: relative;
 float: left;
-top: 150px;
+top: 5px;
 /* left: 40px; */
 width: 65vw;
 line-height: 2;
@@ -46,10 +45,11 @@ display: inline-block;
 }
 
 #startBttn {
-/*  margin-top: 15px; */
-margin-top: 45vh;
-
- /* margin-left: -900px; */
+/* margin-top: 45vh; */
+/* margin-left: -900px; */
+ position: relative;
+  margin-top: 25px;
+  color: #d2e06f;
 }
 
 #locationPreview {
@@ -59,10 +59,10 @@ max-height: 45%;
 float: right;
 margin: auto;
 padding: 30px;
-margin-top: -80px;
+margin-top: -300px;
 }
 footer{
-position: absolute;
+/* position: absolute; */
 padding: 1px;
 top: 125vh;
 }
