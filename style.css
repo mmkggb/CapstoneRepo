@@ -3,15 +3,19 @@ body {background-color: #ac000a;
 bacground-size: 150px;
    height: 85vh;
    width: 98vw;
-  background-size: 99vw 84vh;
+  background-size: 100vw 84vh;
   background-repeat: no-repeat;
    background-position-y: 50%;
   }
 #navbar {
 display: flex;
-justify-content: space-between;
+/* justify-content: space-between; */
 align-items: center;
 color: #210cf3;
+
+}
+#navbar > li {
+  margin: auto;
 }
 main {
  display: inline-block;
@@ -79,4 +83,13 @@ h1{
 }
 #events h2 {
 color: #ac000a
+}
+a:visited {
+  color: rgb(77, 207, 77);
+}
+table, th, td {
+  border:1px solid rgb(191, 182, 218);
+}
+.center {
+ text-align: center;
 }
