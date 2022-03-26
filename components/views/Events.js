@@ -11,8 +11,8 @@ export default () => html`
       </tr>
       <tr class="center">
         <td>${SportState.nfl.description}</td>
-        <td>NBA DATA</td>
-        <td>MLB DATA</td>
+        <td>${SportState.nba.description}</td>
+        <td>${SportState.mlb.description}</td>
       </tr>
     </table>
   </section>
