@@ -8,7 +8,7 @@ export default st => html`<section id="home"><main>
 </p>
 <p class="main-mid"> Its as simple as 1, 2, 3!! When we want to watch a box office movie at the theater we simply do a search on the theater's website and get the show times of our desired movie. We should have the same convenience as sports fans and bar goers, well our moment is finally here friends!
 </p></div>
-<p id="startBttn" alt='convert to button'>Get Started</p>
+<p id="startBttn" alt='convert to button'><a href="./Events">Get Started</a></p>
 <img src="${Map}" alt="Map Location" id="locationPreview"/>
 </main>
 </section>

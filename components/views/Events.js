@@ -3,7 +3,7 @@ import SportState from "../../store/Sports.js";
 export default () => html`
   <section id="events">
     <header><h2>Select Events</h2></header>
-    <table style="width:100%">
+    <table id="test" style="width:100%">
       <tr class="center">
         <th>NFL</th>
         <th>NBA</th>

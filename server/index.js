@@ -4,7 +4,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 // Require models
-const pizzas = require("./router/eventListings");
+const events = require("./router/eventListings");
 const dotenv = require("dotenv");
 dotenv.config();
 // Initialize the Express application
@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(logging);
 
 // Use Routers
-app.use("/eventListings", pizzas);
+app.use("/eventListings", events);
 
 // Handle the request with HTTP GET method from http://localhost:4040/status
 app.get("/status", (request, response) => {
