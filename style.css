@@ -47,8 +47,8 @@ display: inline-block;
 #startBttn {
 /* margin-top: 45vh; */
 /* margin-left: -900px; */
- position: relative;
-  margin-top: 25px;
+ /* position: relative; */
+  /* margin-top: 25px; */
   color: #d2e06f;
   border-style: solid;
   padding: 13px;
@@ -67,7 +67,9 @@ margin-top: -300px;
 footer{
 /* position: absolute; */
 padding: 1px;
-top: 125vh;
+position:fixed;
+bottom: 0;
+/* top: 125vh; */
 }
 table {
   color: #a4a4ab;
