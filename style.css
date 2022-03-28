@@ -108,3 +108,50 @@ table, th, td {
 #startBttn:hover {
   background: #eee;
 }
+@media (max-width: 549px){
+  .hide--mobile {
+    display: none !important;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  nav > i {
+    padding: 1rem;
+    font-size: 2em;
+  }
+
+  nav > ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 0;
+  }
+
+  nav > ul > li {
+    padding: 0.5rem;
+    list-style-type: none;
+  }
+  #locationPreview {
+    max-width: 30%;
+    max-height: 45%;
+    /* display: flex; */
+    float: right;
+    margin: auto;
+    padding: 0px;
+    margin-top: -400px;
+}
+
+}
+@media (min-width: 550px) {
+  nav > .fa-baseball-ball {
+    display: none;
+  }
+}
+.fa-baseball-ball {
+  color: #95c4df;
+  margin-top: -6.5vh;
+  padding-bottom: 10vh;
+}
