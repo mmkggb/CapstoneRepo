@@ -32,9 +32,9 @@ function addEventListeners(st) {
 
   // add menu toggle to bars icon in nav bar
   document
-    .querySelector(".fa-bars")
+    .querySelector(".fa-baseball-ball")
     .addEventListener("click", () =>
-      document.querySelector("nav > ul").classList.toggle("hidden--mobile")
+      document.querySelector("nav > ul").classList.toggle("hide--mobile")
     );
 }
 

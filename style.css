@@ -146,9 +146,25 @@ table, th, td {
 
 }
 @media (min-width: 550px) {
+
+  nav > ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 0;
+  }
+
+  nav > ul > li {
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid;
+    padding: 0.5rem 0.5rem;
+    border-radius: 25px;
+  }
+
   nav > .fa-baseball-ball {
     display: none;
   }
+
 }
 .fa-baseball-ball {
   color: #95c4df;
