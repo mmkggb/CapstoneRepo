@@ -1,6 +1,6 @@
 export default {
   data: [],
-  mlb: {},
-  nba: {},
+  mlb: [],
+  nba: [],
   nfl: {}
 };

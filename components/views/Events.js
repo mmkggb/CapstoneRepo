@@ -1,19 +1,19 @@
 import html from "html-literal";
-import SportState from "../../store/Sports.js";
-export default () => html`
+// import SportState from "../../store/Sports.js";
+export default st => html`
   <section id="events">
     <header><h2>Select Events</h2></header>
     <table id="test" style="width:100%">
-      <tr class="center">
+      <tr>
         <th>NFL</th>
         <th>NBA</th>
         <th>MLB</th>
       </tr>
-      <tr class="center">
-        <td>${SportState.nfl.description}</td>
-        <td>${SportState.nba.description}</td>
-        <td>${SportState.mlb.description}</td>
-      </tr>
+      ${st.nba
+        .map(game => {
+          return `<tr><td>${game.strEvent}</td></tr><tr><td>${game.strEvent}</td></tr><tr><td>${game.strEvent}</td></tr>`;
+        })
+        .join("")}
     </table>
   </section>
 `;

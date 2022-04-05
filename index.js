@@ -70,24 +70,33 @@ router.hooks({
         }
       };
 
-      axios.request(options).then(response => {
-        console.log("RESPONSE", response);
-        state.Sports.data = response.data;
-        state.Sports.data.map(sport => {
-          if (sport.key == "baseball_mlb_world_series_winner") {
-            state.Sports.mlb = sport;
-          } else if (sport.key == "basketball_nba_championship_winner") {
-            state.Sports.nba = sport;
-          } else if (sport.key == "americanfootball_nfl_super_bowl_winner") {
-            state.Sports.nfl = sport;
-          }
+      axios
+        .get(
+          `https://www.thesportsdb.com/api/v1/json/${process.env.LIVE_SPORTS_API_KEY}/eventsday.php?d=2022-03-31&s=Basketball&l=NBA`
+        )
+        .then(response => {
+          console.log("RESPONSE", response);
+          state.Sports.nba = response.data.events;
+          // state.Sports.data.map(sport => {
+          //   state.Sports.mlb = sport.strEvent;
+          //   state.Sports.mlb = sport.dateEventLocal;
+          // });
+          console.log("This is nba: ", state.Sports.nba);
+
+
+          // state.Sports.data.map(sport => {
+          //   if (sport.key == "strSport") {
+          //     state.Sports.mlb = sport;
+          //   } else if (sport.key == "strEvent") {
+          //     state.Sports.nba = sport;
+          //   } else if (sport.key == "strTimestamp") {
+          //     state.Sports.nfl = sport;
+          //   }
+          // });
+          console.log(state.Sports.data);
+          // console.log(response.data.events);
+          done();
         });
-        // state.Sports.League = response.data.title;
-        // state.Sports.Type = response.data.group;
-        // state.Sports.description = response.data[0];
-        console.log(response.data);
-        done();
-      });
     } else {
       done();
     }
