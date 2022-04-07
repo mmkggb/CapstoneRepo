@@ -9,11 +9,15 @@ export default st => html`
         <th>NBA</th>
         <th>MLB</th>
       </tr>
-      ${st.nba
-        .map(game => {
-          return `<tr><td>${game.strEvent}</td></tr><tr><td>${game.strEvent}</td></tr><tr><td>${game.strEvent}</td></tr>`;
-        })
-        .join("")}
+      ${st.nba.map(game => {
+        return `<tr><td>${game.strEvent}</td><td>${game.strEvent}</td><td>${game.strEvent}</td></tr>`;
+      })}
+      ${st.mlb.map(game => {
+        return `<tr><td>${game.strEvent}</td><td>${game.strEvent}</td><td>${game.strEvent}</td></tr>`;
+      })}
+      ${st.nfl.map(game => {
+        return `<tr><td>${game.strEvent}</td><td>${game.strEvent}</td><td>${game.strEvent}</td></tr>`;
+      })}
     </table>
   </section>
 `;

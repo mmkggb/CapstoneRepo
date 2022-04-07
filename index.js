@@ -60,41 +60,34 @@ router.hooks({
         : "Home";
 
     if (view === "Events") {
-      var options = {
-        method: "GET",
-        url: `${process.env.SPORTS_API_URL}`,
-        params: { all: "true" },
-        headers: {
-          "x-rapidapi-host": "odds.p.rapidapi.com",
-          "x-rapidapi-key": `${process.env.SPORTS_API_KEY}`
-        }
-      };
-
       axios
         .get(
           `https://www.thesportsdb.com/api/v1/json/${process.env.LIVE_SPORTS_API_KEY}/eventsday.php?d=2022-03-31&s=Basketball&l=NBA`
         )
         .then(response => {
           console.log("RESPONSE", response);
-          state.Sports.nba = response.data.events;
-          // state.Sports.data.map(sport => {
-          //   state.Sports.mlb = sport.strEvent;
-          //   state.Sports.mlb = sport.dateEventLocal;
-          // });
-          console.log("This is nba: ", state.Sports.nba);
+          state.Events.nba = response.data.events;
 
+          done();
+        });
+      axios
+        .get(
+          `https://www.thesportsdb.com/api/v1/json/${process.env.LIVE_SPORTS_API_KEY}/eventsday.php?d=2022-03-31&s=Baseball&l=MLB`
+        )
+        .then(response => {
+          console.log("RESPONSE", response);
+          state.Events.mlb = response.data.events;
 
-          // state.Sports.data.map(sport => {
-          //   if (sport.key == "strSport") {
-          //     state.Sports.mlb = sport;
-          //   } else if (sport.key == "strEvent") {
-          //     state.Sports.nba = sport;
-          //   } else if (sport.key == "strTimestamp") {
-          //     state.Sports.nfl = sport;
-          //   }
-          // });
-          console.log(state.Sports.data);
-          // console.log(response.data.events);
+          done();
+        });
+      axios
+        .get(
+          `https://www.thesportsdb.com/api/v1/json/${process.env.LIVE_SPORTS_API_KEY}/eventsday.php?d=2022-03-31&s=Football&l=NFL`
+        )
+        .then(response => {
+          console.log("RESPONSE", response);
+          state.Events.nfl = response.data.events;
+
           done();
         });
     } else {
