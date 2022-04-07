@@ -65,7 +65,7 @@ router.hooks({
           `https://www.thesportsdb.com/api/v1/json/${process.env.LIVE_SPORTS_API_KEY}/eventsday.php?d=2022-03-31&s=Basketball&l=NBA`
         )
         .then(response => {
-          console.log("RESPONSE", response);
+          console.log("RESPONSE NBA", response);
           state.Events.nba = response.data.events;
 
           done();
@@ -75,17 +75,17 @@ router.hooks({
           `https://www.thesportsdb.com/api/v1/json/${process.env.LIVE_SPORTS_API_KEY}/eventsday.php?d=2022-03-31&s=Baseball&l=MLB`
         )
         .then(response => {
-          console.log("RESPONSE", response);
+          console.log("RESPONSE MLB", response);
           state.Events.mlb = response.data.events;
 
           done();
         });
       axios
         .get(
-          `https://www.thesportsdb.com/api/v1/json/${process.env.LIVE_SPORTS_API_KEY}/eventsday.php?d=2022-03-31&s=Football&l=NFL`
+          `https://www.thesportsdb.com/api/v1/json/${process.env.LIVE_SPORTS_API_KEY}/eventsday.php?d=2021-11-21&s=Football&l=NFL`
         )
         .then(response => {
-          console.log("RESPONSE", response);
+          console.log("RESPONSE NFL", response);
           state.Events.nfl = response.data.events;
 
           done();
