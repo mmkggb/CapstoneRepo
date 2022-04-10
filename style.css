@@ -45,10 +45,7 @@ display: inline-block;
 }
 
 #startBttn {
-/* margin-top: 45vh; */
-/* margin-left: -900px; */
- /* position: relative; */
-  /* margin-top: 25px; */
+
   color: #d2e06f;
   border-style: solid;
   padding: 13px;
@@ -105,7 +102,7 @@ table, th, td {
 #startBttn, #copyRight {
   color:#59c559;
 }
-#startBttn:hover {
+#startBttn, tr:hover {
   background: #eee;
 }
 @media (max-width: 549px){
@@ -170,4 +167,7 @@ table, th, td {
   color: #95c4df;
   margin-top: -6.5vh;
   padding-bottom: 10vh;
+}
+#events > p {
+  color:#d2e06f;
 }

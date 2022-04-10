@@ -105,3 +105,21 @@ ${Sports_API_URL}=
 //       .join("")}
 //   </table>
 // `;
+
+// let colorClick = document.getElementsByClassName("click");
+// console.log("Color Click: ", colorClick);
+// for (let i = 0; i < colorClick.length; i++) {
+//   colorClick[i].style.backgroundColor = "red";
+//   console.log("Click", colorClick[i]);
+// }
+// let styleChange = (colorClick.style = "color: red");
+// colorClick.onclick = console.log("Clicked row");
+
+/* <th>NBA</th>
+          <th>MLB</th> */
+//  ${st.nba.map(game => {
+// return `<tr><td>${game.strEvent}</td><td>${game.strEvent}</td><td>${game.strEvent}</td></tr>`;
+// })}
+// ${st.mlb.map(game => {
+// return `<tr><td>${game.strEvent}</td><td>${game.strEvent}</td><td>${game.strEvent}</td></tr>`;
+// })}

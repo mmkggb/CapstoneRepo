@@ -9,7 +9,6 @@ dotenv.config();
 const router = new Navigo("/");
 
 function render(st) {
-  console.log("RENDER STATE", st);
   document.querySelector("#root").innerHTML = `
     ${Header(st)}
     ${Nav(state.Links)}
@@ -20,8 +19,6 @@ function render(st) {
 
   addEventListeners(st);
 }
-
-// render(state.Home);
 
 function addEventListeners(st) {
   // add event listeners to Nav items for navigation
@@ -39,20 +36,6 @@ function addEventListeners(st) {
       document.querySelector("nav > ul").classList.toggle("hide--mobile")
     );
 }
-
-// axios
-//   .request(options)
-//   .then(function(response) {
-//     state.Home.Sports = {};
-//     state.Home.Sports.League = response.data.title;
-//     state.Home.Sports.Type = response.data.group;
-//     state.Home.Sports.description = response.data[0];
-//     console.log(response.data);
-//     done();
-//   })
-//   .catch(function(error) {
-//     console.error(error);
-//   });
 
 router.hooks({
   before: (done, params) => {
