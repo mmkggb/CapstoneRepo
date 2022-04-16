@@ -1,11 +1,23 @@
-body {background-color: #ac000a;
+header {
+
+}
+header {
+  background: url("docs/Capstone Pictures/pexels-dom-le-roy-3991976.jpg") center center no-repeat;  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+/* body {background-color: #ac000a;
   background-image: url("docs/Capstone Pictures/pexels-dom-le-roy-3991976.jpg");
    height: 85vh;
    width: 98vw;
   background-size: 100vw 84vh;
   background-repeat: no-repeat;
    background-position-y: 50%;
-  }
+
+  } */
 #navbar {
 display: flex;
 /* justify-content: space-between; */
@@ -50,6 +62,8 @@ display: inline-block;
   border-style: solid;
   padding: 13px;
   background-color:#071812;
+  margin-top: 35px;
+
 }
 
 #locationPreview {
@@ -59,23 +73,23 @@ max-height: 45%;
 float: right;
 margin: auto;
 padding: 30px;
-margin-top: -300px;
+margin-top: -355px;
 }
 footer{
 /* position: absolute; */
 padding: 1px;
-position:fixed;
+/* position:fixed; */
 bottom: 0;
 /* top: 125vh; */
 }
 table {
-  color: #a4a4ab;
+  color: #201f1f;
 }
 #about_us, #contact_us, #home{
-  color: white
+  color: #4a3e3e;
 }
 h1{
-  color: gray;
+  color: #7391ff;
 }
 #navbar {
   color: rgb(255, 255, 111)
@@ -84,10 +98,13 @@ h1{
   color: white;
 }
 #events h2 {
-color: #ac000a
+color: #ac000a;
+text-align: center;
 }
 a:visited {
   color: rgb(77, 207, 77);
+  padding: 8px;
+  background-color: #95c4df;
 }
 table, th, td {
   border:1px solid rgb(191, 182, 218);
@@ -95,7 +112,7 @@ table, th, td {
 .center {
  text-align: center;
 }
-#test {
+.tabCent {
   margin-left: auto;
   margin-right: auto;
 }
@@ -169,5 +186,31 @@ table, th, td {
   padding-bottom: 10vh;
 }
 #events > p {
-  color:#d2e06f;
+  color:#49aeff;
+  font-size: larger;
+  /* padding-top:; */
+}
+p {
+  font-weight: bold;
+  font-size: 20px;
+}
+.pCenter {
+  text-align: center;
+}
+#confirmed {
+  color: #201f1f;
+  padding-bottom: 25px;
+}
+#nfl {
+  margin-top: -180px;
+}
+#nba {
+  margin-top: -95px;
+}
+#mlb {
+  margin-top: -390px;
+}
+.pTabSpc {
+padding-top: 40px;
+padding-bottom: 6px;
 }
